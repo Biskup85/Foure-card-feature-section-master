@@ -1,0 +1,144 @@
+:root {
+	--Red: hsl(0, 78%, 62%);
+	--Cyan: hsl(180, 62%, 55%);
+	--Orange: hsl(34, 97%, 64%);
+	--Blue: hsl(212, 86%, 64%);
+	--VeryDarkBlue: hsl(234, 12%, 34%);
+	--GrayishBlue: hsl(229, 6%, 66%);
+	--VeryLightGray: hsl(0, 0%, 98%);
+
+	--fw-reg: 400;
+	--fw-bold: 600;
+	--fw-light: 200;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 0.9rem;
+	font-family: 'Poppins', sans-serif;
+	line-height: 1.3;
+}
+.container {
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.logo {
+	text-align: right;
+}
+.col {
+	width: 100%;
+}
+.header {
+	padding-top: 3.5em;
+	padding-bottom: 4em;
+}
+.section {
+	padding: 0 0.2em;
+}
+.main__header {
+	text-align: center;
+}
+.title__header {
+	margin: initial;
+}
+.title__header--dark {
+	color: var(--GrayishBlue);
+	font-weight: var(--fw-reg);
+}
+.title__header--light {
+	color: var(--VeryDarkBlue);
+}
+.text {
+	color: var(--GrayishBlue);
+	font-weight: var(--fw-light);
+}
+.section__content {
+	margin-bottom: 1.5em;
+	box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25);
+	padding: 1.5em;
+}
+.section__content--one {
+	border-top: 3px solid var(--Cyan);
+}
+.section__content--two {
+	border-top: 3px solid var(--Red);
+}
+.section__content--three {
+	border-top: 3px solid var(--Orange);
+}
+.section__content--four {
+	border-top: 3px solid var(--Blue);
+}
+
+.section__title {
+	color: var(--VeryDarkBlue);
+	font-weight: var(--fw-bold);
+	margin: initial;
+}
+.section__text {
+	font-size: 0.8rem;
+	line-height: 1.5;
+}
+@media (min-width: 700px) {
+	body {
+		height: 100vh;
+	}
+
+	.main__header {
+		width: 60%;
+	}
+	.text__header {
+		width: 500px;
+		margin: 0 auto;
+		padding-top: 2em;
+	}
+	.section {
+		height: 600px;
+		margin: 0 auto;
+		padding: 0 1em 3em 1em;
+		display: grid;
+		width: max-content;
+		margin: 0 auto;
+		grid-column-gap: 2em;
+		grid-template-areas:
+			'one two three'
+			'one four three';
+		justify-content: stretch;
+		align-content: end;
+		align-items: center;
+	}
+	.section__content--one {
+		grid-area: one;
+	}
+	.section__content--two {
+		grid-area: two;
+	}
+	.section__content--three {
+		grid-area: four;
+	}
+	.section__content--four {
+		grid-area: three;
+	}
+	.section__content {
+		height: 250px;
+		max-width: 350px;
+	}
+	.title__header {
+		font-size: 1.5rem;
+		padding-bottom: 0.2em;
+	}
+	.section__title {
+		font-size: 1.3rem;
+	}
+	.text {
+		font-size: 1rem;
+	}
+	.logo {
+		padding-top: 1em;
+	}
+}
